@@ -1,0 +1,201 @@
+select {
+    width: 40%;
+    margin: 0 8px;
+    height: 100%;
+    border: none;
+    padding: 0 7px;
+    outline: none;
+}
+
+#title {
+    text-align: center;
+    color: #003049;
+    font-size: 40px;
+}
+
+#filter {
+    width: 80%;
+    margin: 4rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    height: 60px;
+    filter: drop-shadow(0px 4px 4px #0000005c);
+}
+
+#filter input {
+    width: 90%;
+    height: 100%;
+    padding-left: 7px;
+    border: none;
+    filter: drop-shadow(4px, 4px, 4px black);
+    outline: none;
+}
+
+#filter input,
+#filter select {
+    border-right: 1px solid #EAE2B7;
+}
+
+#filter input::placeholder {
+    font-size: 18px;
+}
+
+
+#filter button {
+    width: 40%;
+    height: 100%;
+    color: white;
+    background-color: #D62828;
+    border: none;
+    font-weight: 700;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+#table {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#table ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#table ul li {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    color: #003049;
+    padding: 1rem 0;
+}
+
+#table ul li img {
+    height: 30px;
+    width: 30px;
+    margin:0 15px;
+}
+
+#table ul li div {
+    width: 100%;
+    border-left: 1px solid #EAE2B7;
+}
+
+#table h3{
+    border-right: 1px solid #EAE2B7; 
+}
+
+#table  .seperate-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+
+#table ul li form {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+
+#table ul li div input {
+    border: none;
+    border-bottom: 1px solid #EAE2B7;
+    text-align: center;
+    outline: none;
+    color: #D62828;
+}
+
+#table ul li div button {
+    background-color: #D62828;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+#table ul li .btn-class {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#table .seperate-grid h3,
+#table ul li div h3{
+    padding: 0 0.4rem;
+}
+
+@media screen and (max-width: 930px){
+
+    #title {
+        font-size: 32px;
+    }
+
+    #filter {
+        width: 90%;
+        height: 60px;
+    }
+    
+    #filter input {
+        width: 30%;
+    }
+    
+    #filter input::placeholder {
+        font-size: 18px;
+    }
+    
+    #filter button {
+        font-size: 17px;
+    }
+    #table .seperate-grid h3,
+    #table ul li div h3{
+        font-size: 18px;
+    }
+}
+
+
+@media screen and (max-width: 650px){
+    #table .seperate-grid h3,
+    #table ul li div h3{
+        font-size: 14px;
+    }
+
+    #filter input::placeholder {
+        font-size: 16px;
+    }
+
+    #table ul li img {
+        height: 20px;
+        width: 20px;
+        margin:0 15px;
+    }
+
+    #filter button {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 650px){
+    #filter input::placeholder {
+        font-size: 12px;
+    }
+
+    #table .seperate-grid h3,
+    #table ul li div h3{
+        font-size: 12px;
+        overflow-wrap: break-word;
+        min-width: 30px;
+        text-align: center;
+        padding: 0 0.4rem;
+    }
+
+    #filter button {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,43 @@
+<h1 id="title">Manage Users</h1>
+<form [formGroup]="filterForm" id="filter"  >
+    <input formControlName="filter" type="text" placeholder="Name...">
+</form>
+
+<span style="display:block;font-size: 18px;margin-bottom: 15px;color: red;font-weight: 800;" *ngIf="!isAllowed">*Only admin can delete users</span>
+<section id="table">
+    <ul >
+        <li>
+            <div class="seperate-grid">
+                <h3>name</h3>
+                <h3>contact</h3>
+                <h3>email</h3>
+                <h3>role</h3>
+            </div>
+            <div>
+                <h3>Settings</h3>
+            </div>          
+        </li>
+        @for (user of users; track user.id){
+            @if(checkfilter(user.name)){
+                <li>
+                    <div class="seperate-grid" >
+                        <h3>{{user.name}}</h3>
+                        <h3>{{user.contactNumber}}</h3>
+                        <h3>{{user.email}}</h3>
+                        <h3>{{user.role}}</h3>
+                    </div>
+                    <div id="img-container">
+                        <img (click)="restrictUser(user.id)" *ngIf="checkUser(user.id)" src="dashboard/on.png" alt="">
+                        <img (click)="allowUser(user.id)" *ngIf="!checkUser(user.id)"  src="dashboard/off.png" alt="">
+                        <img (click)="deleteUser(user.id)"  src="dashboard/Delete.png" alt="">
+                    </div>
+                </li>                
+            }
+
+        }
+
+        
+    </ul>
+</section>
+
+<app-reload *ngIf="isLoading" />

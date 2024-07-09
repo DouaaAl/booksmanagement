@@ -1,0 +1,27 @@
+<div class="popup">
+    <div class="popup-cover">
+        <div id="close-icon">
+            <img (click)="closeLogin()" id="close" src="close.png"  alt="">
+        </div>
+        <form (submit)="login()" [formGroup]="loginForm"  action="">
+            <article>
+                <div>
+                    <Label>Email:</Label>
+                    <input formControlName="email" placeholder="Email..." type="text">
+                </div>            
+            </article>
+            <article>
+                <div>
+                    <Label>Password:</Label>
+                    <input formControlName="password" placeholder="Password..." type="password">
+                </div>            
+            </article>
+            <div id="button-div">
+                <button type="submit" >Submit</button>
+            </div>
+        </form>       
+        <p *ngIf="isProblem" style="display: block; font-size: 18px;color: red;">{{errMessage}}</p>
+        <p *ngIf="isRestricted" style="display: block; font-size: 18px;color: red;">Your account is restricted</p>
+    </div>
+
+</div>

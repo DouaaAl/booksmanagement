@@ -1,0 +1,122 @@
+#title {
+    text-align: center;
+    color: #003049;
+    font-size: 40px;
+}
+
+#totals{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 4rem auto;
+    border-radius: 25px;
+    padding: 1rem 0.5rem 2rem 0.5rem;
+    filter: drop-shadow(0px 4px 4px #0000005c);
+}
+
+#totals h1 {
+    color: #D62828;
+    font-size: 2rem;
+    border-bottom: 1px solid #D62828;
+    padding-bottom: 0.5rem;
+}
+
+#totals-text {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3rem;
+}
+
+#totals-text div {
+    border-radius: 25px;
+    background-color: #EAE2B7;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+#totals-text div h3 {
+    font-size: 22px;
+}
+
+#totals-text div span {
+    font-size: 22px;
+    font-weight: 900;
+}
+
+#totals-text div h3,
+#totals-text div span {
+    color: #003049;
+}
+
+
+
+@media screen and (max-width: 930px){
+    #title{
+        font-size: 35px;
+    }
+
+    #totals{
+        width: 90%;
+    }
+
+    
+    #totals h1  {
+        font-size: 1.7rem;
+    }
+
+    #totals-text {
+        gap: 1rem;
+    }
+    
+    #totals-text div {
+        padding: 0.7rem 1rem;
+        gap: 1rem;
+    }
+    
+    #totals h1 {
+        font-size: 1.6rem;
+    }
+
+    #totals-text div h3 {
+        font-size: 1.4rem;
+    }
+
+}
+
+@media screen and (max-width: 665px) {
+    #title {
+        font-size: 1.4rem;
+    }
+
+    #totals h1 {
+        font-size: 1.2rem;
+    }
+
+    #totals-text div h3 {
+        font-size: 17px;
+    }
+    #totals{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #totals-text {
+        gap: 0.5rem;
+        padding-top: 1rem;
+        flex-direction: column;
+    }
+    
+    #totals-text div {
+        padding: 0.7rem 0.5rem;
+        gap: 0.5rem;
+    }
+    
+}

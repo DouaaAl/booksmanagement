@@ -1,0 +1,30 @@
+<app-header></app-header>
+<main>
+    <section id="sidebar">
+        <article (click)="goDetails()">
+            <img src="dashboard/dashboard.png" alt="">
+            <h2>Dashboard</h2>            
+        </article>
+        <ul>
+            <li (click)="goCategories()">
+                <img src="dashboard/categories.png" alt="">
+                <h2>Manage Categories</h2>
+            </li>
+            <li (click)="goProducts()">
+                <img src="dashboard/products.png" alt="">
+                <h2>Manage Products</h2>
+            </li>
+            <li (click)="goBills()">
+                <img src="dashboard/bills.png" alt="">
+                <h2>Manage Bills</h2>
+            </li>
+            <li (click)="goUsers()">
+                <img src="dashboard/users.png" alt="">
+                <h2>Manage Users</h2>
+            </li>
+        </ul>
+    </section>
+    <section id="layout">
+        <ng-container *ngComponentOutlet="currentComponent"></ng-container>
+    </section>
+</main>

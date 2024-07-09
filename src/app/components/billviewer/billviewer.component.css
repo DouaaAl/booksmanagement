@@ -1,0 +1,13 @@
+
+.pdf-wrapper {
+    width: 100vw;
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    background-color: #FFFCEE;
+}
+embed {
+    margin: 0 auto;
+}

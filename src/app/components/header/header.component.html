@@ -1,0 +1,30 @@
+<header>
+  <a style="text-decoration: none;" href="">
+    <h1>Book Management System</h1>
+  </a>
+    <div *ngIf="!httpService.user">
+      <span (click)="openLogin()">
+        Login
+      </span>
+      <span (click)="openRegister()">
+        Sign Up
+      </span>
+      <span (click)="openForgot()" href="#" >
+        Forgot Password
+      </span>
+    </div>
+    <span id="user" *ngIf="httpService.user">
+      <a href="dashboard">
+        <img style="margin-right: 15px;" src="dashboard/reddash.png" alt="">
+      </a>
+      <a href="profile">
+        <img src="user.png" alt="">
+      </a>
+      <span (click)="logout()">
+        LogOut
+      </span>
+    </span>
+  </header>
+  <app-popup *ngIf="headerService.openRegister"  />
+  <app-login *ngIf="headerService.openLogin" />
+  <app-forgotpassword *ngIf="headerService.openForgot" />

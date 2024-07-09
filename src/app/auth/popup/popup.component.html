@@ -1,0 +1,51 @@
+<div class="popup" *ngIf="headerService.openRegister">
+    <div class="popup-cover">
+        <div id="close-icon">
+            <img  id="close" src="close.png" (click)="closeBtnFunc()" alt="">
+        </div>
+        <p id="title" style="font-size: 21px; ">Password should have : </p>
+        <br>
+        <p style="color: red;">*It should at least 8 characters</p>
+        <br>
+        <p style="color: red;">*It should contain at least one uppercase letter.</p>
+        <br>
+        <p style="color: red;">*It should contain at least one lowercase letter.</p>
+        <br>
+        <p style="color: red;">*It should contain at least one number.</p>
+        <br>
+        <p style="color: red;padding-bottom: 15px;">*It should atleast contain one speacial Character.</p>
+
+        <form [formGroup]="applyForm" action="">
+            <article>
+                <div>
+                    <Label >FullName:</Label>
+                    <input formControlName="fullName" placeholder="FullName..." type="text">
+                </div>
+                <div>
+                    <Label>Email:</Label>
+                    <input  formControlName="email" placeholder="Email..." type="text">
+                    <label style="color: red;font-size: 18px;margin-top: 15px;font-weight:500" *ngIf="applyForm.controls['email'].touched && applyForm.controls['email'].invalid">Invalid Email</label>
+                </div>           
+            </article>
+            <article>
+                <div>
+                    <Label>Contact Number:</Label>
+                    <input formControlName="contact" placeholder="Contact Number..." type="text">
+                    <label style="color: red;font-size: 18px;margin-top: 15px;font-weight:500" *ngIf="applyForm.controls['contact'].touched && applyForm.controls['contact'].invalid">Invalid Email</label>
+                </div>
+                <div>
+                    <Label>Password:</Label>
+                    <input formControlName="password" placeholder="Password..." type="password">
+                    <label style="color: red;font-size: 18px;margin-top: 15px;font-weight:500" *ngIf="applyForm.controls['password'].touched && applyForm.controls['password'].invalid">Invalid Email</label>
+                </div>            
+            </article>
+            <div id="button-div">
+                <button (click)="submitApplication()" >Submit</button>
+            </div>
+
+        </form>
+        <p *ngIf="isExist" style="font-size: 18px;color: red;">{{errMessage}}</p>  
+        <p *ngIf="isRegistered" style="font-size: 18px;color: green;">Registration Successful!</p>    
+    </div>
+
+</div>

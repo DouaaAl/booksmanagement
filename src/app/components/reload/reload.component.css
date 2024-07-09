@@ -1,0 +1,25 @@
+article {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EAE2B7;
+    z-index: 99999999;
+}
+
+article img {
+    transform: scale(1.7) rotate(40deg);
+    animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: scale(1.7) rotate(0deg);
+    }
+    to {
+        transform: scale(1.7) rotate(360deg);
+    }
+}

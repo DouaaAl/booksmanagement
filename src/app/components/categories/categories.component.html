@@ -1,0 +1,40 @@
+<h1 id="title">Manage Categories</h1>
+<form [formGroup]="filterForm" (submit)="addCategory($event)" id="filter" action="">
+    <input formControlName="search" type="text" placeholder="filer">
+    <button type="submit">Add Category</button>
+</form>
+
+<section id="table">
+    <ul >
+        <li>
+            <div>
+                <h3>Name</h3>
+            </div>
+            <div>
+                <h3>Admin</h3>
+            </div>
+        </li>
+        @for (category of categories; track category.id){
+            @if(checkFilter(category.name)){
+            <li>
+                <div *ngIf="getState(category.id)">
+                    <h3>{{category.name}}</h3>
+                </div>
+                <div *ngIf="getState(category.id)">
+                    <img (click)="changeName(category.id)" src="dashboard/Settings.png" alt="">
+                    <img (click)="deleteCategory(category.name)" src="dashboard/Delete.png" alt="">
+                </div>
+                <div *ngIf="!getState(category.id)">
+                    <form [formGroup]="formName" >
+                        <input formControlName="newname" placeholder="New Name" type="text">
+                    </form>
+                </div>
+                <div *ngIf="!getState(category.id)">
+                    <button (click)="trueState(category.id)">Submit</button>
+                </div>
+            </li>                
+            }
+
+        }
+    </ul>
+</section>

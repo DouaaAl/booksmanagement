@@ -1,0 +1,21 @@
+<h1 id="title">Book Management Stores Data</h1>
+
+<article (click)="getDetails()" id="totals">
+    <h1 >Totals</h1>
+    <div id="totals-text">
+        <div>
+            <h3>Total Categories</h3>
+            <span>{{categoryCount}}</span>
+        </div>
+        <div>
+            <h3>Total Products</h3>
+            <span>{{productCount}}</span>
+        </div>
+        <div>
+            <h3>Total Orders</h3>
+            <span>{{billCount}}</span>
+        </div>
+    </div>
+</article>
+
+<app-reload *ngIf="isLoading" />

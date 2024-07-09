@@ -1,0 +1,47 @@
+<app-header />
+<main>
+    <div class="main-container">
+        <h1>Email: {{user?.email}}</h1>
+        <button (click)="ToggleEmail()">Change email</button>
+        <form (ngSubmit)="handleEmail($event)" [formGroup]="emailForm" *ngIf="isChangeEmail" action="">
+            <div>
+                <label for="">New Email</label>
+                <input formControlName="email" type="text">
+            </div>
+            <div>
+                <label for="">Confirm New Email</label>
+                <input  formControlName="confirmedEmail" type="text">
+            </div>
+            <p *ngIf="isEmailMismatch" style="color:red;font-size:18px;font-weight:800; padding-top: 15px">Emails are mismatched</p>
+            <button class="submit-btn">Submit</button>
+        </form>
+        <h1>Name:  {{user?.name}}</h1>
+        <button (click)="ToggleName()">Change name</button>
+        <form (submit)="handleName($event)" [formGroup]="nameForm" *ngIf="isChangeName" action="">
+            <div>
+                <label for="">New Name</label>
+                <input formControlName="name" type="text">
+            </div>
+            <div>
+                <label for="">Confirm New Name</label>
+                <input formControlName="confirmedName" type="text">
+            </div>
+            <p *ngIf="isNameMismatch" style="color:red;font-size:18px;font-weight:800; padding-top: 15px">Names are mismatched</p>
+            <button  class="submit-btn">Submit</button>
+        </form>
+        <h1>Password </h1>
+        <button (click)="TogglePassword()">Change password</button>
+        <form (submit)="handlePassword($event)" [formGroup]="passwordForm" *ngIf="isChangePassword" action="">
+            <div>
+                <label for="">New password</label>
+                <input formControlName="newpassword" type="password">
+            </div>
+            <div>
+                <label for="">Confirm New password</label>
+                <input formControlName="confirmedNewpassword" type="password">
+            </div>
+            <p *ngIf="isPasswordMismatch" style="color:red;font-size:18px;font-weight:800; padding-top: 15px">Passwords are mismatched</p>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+</main>

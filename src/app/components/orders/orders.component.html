@@ -1,0 +1,64 @@
+<h1 id="title">Manage Bills</h1>
+<form [formGroup]="customerDetails" id="filter" action="">
+    <input formControlName="name" type="text" placeholder="Name...">
+    <input formControlName="email" type="text" placeholder="Email...">
+    <select formControlName="paymentMethod">
+        <option value="cash">Cash</option>
+        <option value="paypal">Paypal</option>
+    </select>
+
+    <button (click)="addBill()" type="submit">Add Bill</button>
+</form>
+
+<form [formGroup]="productDetails" id="filter" action="">
+    <select (change)="getProductsById()" formControlName="categoryId">
+        @for (category of categories; track category.id){
+            <option  ((select))="getProductsById()" [value]="category.id">{{category.name}}</option>
+        }
+    </select>
+    <select formControlName="product">
+        @for (product of productCategories; track product.id){
+            <option [value]="product.id">{{product.name}}</option>
+        }
+    </select>
+    <input formControlName="quantity" type="text" placeholder="Quantity...">
+
+    <button (click)="addProduct()" type="submit">Add Product</button>
+</form>
+
+
+
+<section id="table">
+    <ul >
+        <li>
+            <div class="seperate-grid">
+                <h3 >Name</h3>
+                <h3>Payment Method</h3>
+                <h3>Email</h3>
+                <h3>Total</h3>
+                <h3>Created By</h3>
+            </div>
+            <div>
+                <h3>Bill</h3>
+            </div>          
+        </li>
+        @for (bill of bills; track bill.id){
+            <li>
+                <div class="seperate-grid" >
+                    <h3>{{bill.name}}</h3>
+                    <h3>{{bill.paymentMethod}}</h3>
+                    <h3>{{bill.email}}</h3>
+                    <h3>{{bill.total}}</h3>
+                    <p>{{bill.createdBy}}</p>
+                </div>
+                <div>
+                    <img (click)="routeToBill(bill.uuid)" src="dashboard/eye.png" alt="">
+                    <img (click)="deleteBill(bill.id)"  src="dashboard/Delete.png" alt="">
+                </div>
+            </li>
+        }
+        
+    </ul>
+</section>
+
+<app-reload *ngIf="isLoading" />

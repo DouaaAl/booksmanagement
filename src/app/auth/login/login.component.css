@@ -1,0 +1,110 @@
+.popup {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.popup-cover {
+    background-color: white;
+    padding: 2rem 1.5rem 2rem 2rem;
+    width: 40%;
+    border-radius: 25px;
+}
+
+.popup-cover form {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.popup-cover form article {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.popup-cover form article label, 
+.popup-cover form article input {
+    display: block;
+}
+
+.popup-cover form article label {
+    font-weight: 800;
+    padding-bottom: 15px;
+    font-size: 20px;
+}
+
+.popup-cover form article input {
+    width: 400px;
+    background-color: #EAE2B7;
+    border: 1px solid #003049;
+    border-radius: 20px;
+    padding: 10px 7px;
+}
+
+.popup-cover form div button {
+    padding: 0.5rem 1rem;
+    font-size: 20px;
+    border-radius: 15px;
+    background-color: #D62828;
+    color: #EAE2B7;
+    border: none;
+}
+
+.popup-cover #button-div {
+    width: 98%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.popup-cover #close-icon {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+@media screen and (max-width: 900px){
+    
+.popup-cover {
+    background-color: white;
+    padding: 2rem 1.5rem 2rem 2rem;
+    width: 90%;
+    border-radius: 25px;
+}
+
+.popup-cover form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.popup-cover form article {
+    width: 95%;
+}
+
+
+.popup-cover form article label {
+    font-size: 16px;
+}
+
+.popup-cover form article input {
+    width: 90%;
+    padding: 10px 7px;
+}
+
+.popup-cover #close-icon {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    justify-content: flex-end;
+    float: right;
+}
+
+}

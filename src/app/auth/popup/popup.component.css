@@ -1,0 +1,121 @@
+.popup {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height: 90vh;
+    width: 100vw;
+    transform: translateY(5vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.popup-cover {
+    background-color: white;
+    padding: 1rem 1.5rem 1rem 2rem;
+    width: 80%;
+    border-radius: 25px;
+}
+
+.popup-cover form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.popup-cover form article {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.popup-cover form article label, 
+.popup-cover form article input {
+    display: block;
+}
+
+.popup-cover form article label {
+    font-weight: 800;
+    padding-bottom: 15px;
+    font-size: 20px;
+}
+
+.popup-cover form article input {
+    width: 400px;
+    background-color: #EAE2B7;
+    border: 1px solid #003049;
+    border-radius: 20px;
+    padding: 10px 7px;
+}
+
+.popup-cover form div button {
+    padding: 0.5rem 1rem;
+    font-size: 20px;
+    border-radius: 15px;
+    background-color: #D62828;
+    color: #EAE2B7;
+    border: none;
+}
+
+.popup-cover #button-div {
+    width: 98%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.popup-cover #close-icon {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+@media screen and (max-width: 900px){
+    .popup-cover{
+    padding: 0rem 1.5rem 1rem 2rem;
+    width: 95%;
+    margin: 0 auto;
+    gap: 0;
+    }
+    .popup-cover form article input {
+        width: 95%;
+        margin-bottom: 5px;
+    }
+
+    .popup-cover form article {
+        flex-direction: column;
+    }
+
+    .popup-cover form article label {
+        padding-bottom: 5px;
+        font-size: 16px;
+    }
+
+    .popup-cover p {
+        font-size: 14px;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .popup-cover form {
+        gap: 0rem;
+    }
+
+    #title {
+        padding-top: 15px;
+        font-size: 18px !important;
+    }
+    
+.popup-cover #close-icon {
+    height: 45px;
+    width: 45px;
+    padding: 10px 0;
+    float: right;
+}
+
+.popup-cover form article label {
+    padding-bottom: 5px;
+}
+
+}

@@ -1,0 +1,197 @@
+select {
+    width: 100%;
+    margin: 0 8px;
+    height: 100%;
+    border: none;
+    padding: 0 7px;
+}
+
+#title {
+    text-align: center;
+    color: #003049;
+    font-size: 40px;
+}
+
+#filter {
+    width: 80%;
+    margin: 4rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    height: 60px;
+    filter: drop-shadow(0px 4px 4px #0000005c);
+}
+
+#filter input,
+#filter select {
+    width: 20%;
+    height: 100%;
+    padding-left: 7px;
+    border: none;
+    filter: drop-shadow(4px, 4px, 4px black);
+    outline: none;
+    border-left: 1px solid #EAE2B7;
+}
+
+#filter input::placeholder {
+    font-size: 18px;
+}
+
+#filter button {
+    width: 20%;
+    height: 100%;
+    color: white;
+    background-color: #D62828;
+    border: none;
+    font-weight: 700;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+#table {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#table ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#table ul li {
+    display: grid;
+    grid-template-columns: 85% 15%;
+    border: 1px solid #EAE2B7;
+    color: #003049;
+    padding: 1rem 0;
+}
+
+#table ul li img {
+    height: 30px;
+    width: 30px;
+    margin: 0 15px;
+}
+
+#table ul li div {
+    width: 100%;
+    border-left: 1px solid #EAE2B7;
+}
+
+#table ul li .seperate-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+#table ul li .seperate-grid h3{
+    border-right: 1px solid #EAE2B7;
+}
+
+#table ul li form {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+
+#table ul li div input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0 7px;
+}
+
+#table ul li div button {
+    background-color: #D62828;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+#table ul li .btn-class {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+}
+
+@media screen and (max-width: 700px) {
+    #table h3,
+    #table p {
+        font-size: 14px;
+    }
+
+    #table ul li img {
+        height: 20px;
+        width: 20px;
+        margin: 0 10px;
+    }
+
+    #filter {
+        width: 90%;
+    }
+
+    #table {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    #title {
+        font-size: 30px;
+    }
+
+    #table h3,
+    #table p {
+        font-size: 12px;
+    }
+
+    #filter input::placeholder {
+        font-size: 13px;
+    }
+    #filter button {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {   
+    
+    #title {
+        font-size: 25px;
+    }
+    #filter input::placeholder {
+       font-size: 11px;
+    }
+    #filter {
+        width: 100%;
+        margin: 30px auto;
+    }
+
+    #table {
+        width: 100%;
+    }
+    
+    #filter input {
+        width: 20%;
+    }
+    
+    
+    #filter button {
+        width: 12%;
+        font-size: 12px;
+    }
+
+    #filter select {
+        width: 15%;
+    }
+    
+    
+}

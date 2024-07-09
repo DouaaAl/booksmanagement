@@ -1,0 +1,8 @@
+<app-header />
+
+<div class="pdf-wrapper">
+    <iframe [src]="url" style="width: 800px;height: 500px;border: none;"></iframe>
+</div>
+
+<app-reload *ngIf="isLoading" />
+
