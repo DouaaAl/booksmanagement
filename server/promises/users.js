@@ -10,7 +10,7 @@ export const pool = mysql.createPool({
     port: process.env.MYSQL_PORT
   }).promise()
 export const getUsers = async()=>{
-    console.log("getting users and ", process.env.user);
+    console.log("\ngetting users and \n", process.env.MYSQL_HOST);
     const [rows] = await pool.query("SELECT * FROM Users");
 
     return rows;
