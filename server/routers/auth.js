@@ -38,7 +38,6 @@ router.post("/register", async(req,res)=>{
 
 router.post("/forgotpassword", async(req,res)=>{
     let { email } = req.body;
-    console.log("I am in forgot and this is the email:", email)
     const user = await getUserEmail(email);
     if (!user || user.length === 0) {
         return res.status(200).json({
@@ -110,7 +109,6 @@ router.post("/refresh", async (req,res)=>{
     if (!refreshToken) return res.status(401).send("You are not authenticated");
     if(!databaseRefreshToken) res.status(403).send("Refresh Token is not in database");
     jwt.verify(refreshToken.refreshToken, process.env.JWT_REFRESH, async(err,user)=>{
-        err && console.log(err);
         deleteToken(refreshToken.refreshToken);
         const newRefreshToken = await generateRefreshToken(refreshToken);
         await pushRefreshToken(refreshToken.refreshToken);
@@ -130,9 +128,7 @@ router.get("/refresh", async(req,res)=>{
 export const verify = (req,res,next) =>{
     const authHeader = req.headers['authorization'];
     if(authHeader){
-        const token = authHeader.split(" ")[1];
-        console.log("token", token)
-        
+        const token = authHeader.split(" ")[1];        
         jwt.verify(token, process.env.JWT_REFRESH, (err, user)=>{
             if(err){
                 res.status(403).send("Token is not Valid");
