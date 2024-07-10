@@ -62,6 +62,7 @@ router.post("/report/view", verify, async (req, res) => {
     }
 
     try {
+        console.log("inserting row");
         const insertResult = await pool.query(
             "INSERT INTO bill (name, uuid, email, contactNumber, paymentMethod, total, productDetails, createdBy) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
             [
@@ -74,11 +75,9 @@ router.post("/report/view", verify, async (req, res) => {
                 JSON.stringify(productDetails),
                 orderDetails.createdBy
             ]
-        ).then((res)=>{
-            console.log(res);
-        })
-
+        )
         if (insertResult) {
+            console.log("row inserted");
             await ejs.renderFile(
                 path.join(__dirname, '', 'bill.ejs'),
                 {
