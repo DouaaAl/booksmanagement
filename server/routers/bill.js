@@ -77,7 +77,7 @@ router.post("/report/view", verify, async (req, res) => {
             ]
         )
         if (insertResult) {
-            console.log("row inserted");
+            console.log("row inserted, dirname: ",__dirname);
             await ejs.renderFile(
                 path.join(__dirname, '', 'bill.ejs'),
                 {
