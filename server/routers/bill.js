@@ -96,7 +96,7 @@ router.post("/report/view", verify, async (req, res) => {
                     }
 
                     try {
-                        const pdfResult = pdf.create(data).toFile(__dirname,`generated_pdf/${generateUuid}.pdf`, (err, pdfResult)=>{
+                        const pdfResult = pdf.create(data).toFile(`generated_pdf/${generateUuid}.pdf`, (err, pdfResult)=>{
                             console.log("pdf created successfully");
                             res.status(200).json({ message: generateUuid });             
                         });
