@@ -36,7 +36,7 @@ url: string = "https://booksmanagement-production-304b.up.railway.app/api"
   }
   
   getUsers(): Observable<any>{
-    return this.http.get("http://localhost:5000/api/auth")
+    return this.http.get( this.url + "/auth")
   }
   
   getUser(){

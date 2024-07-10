@@ -97,7 +97,6 @@ export class OrdersComponent {
   getProductTotal(){
     let total = 0;
     this.products.forEach((product)=>{
-      console.log("calculating total", product);
       total = total + product.price * parseInt(product.quantity);
     })
     return total;

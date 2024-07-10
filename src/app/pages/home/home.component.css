@@ -94,6 +94,14 @@ header a {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+.order2{
+    order: 3;
+}
+
+.order1 {
+    order: 1;
+}
+
 .best-grid .img {
     display: flex;
     align-items: center;
@@ -143,6 +151,27 @@ header a {
     
     .order1 {
         order: none;
+    }
+    
+    .best-grid p {
+        width: 300px;
+        font-size: 14px;
+    }
+    .best-grid img {
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .best-grid article {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
     }
     
     .best-grid p {
