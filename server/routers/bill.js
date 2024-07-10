@@ -74,7 +74,9 @@ router.post("/report/view", verify, async (req, res) => {
                 JSON.stringify(productDetails),
                 orderDetails.createdBy
             ]
-        );
+        ).then((res)=>{
+            console.log(res);
+        })
 
         if (insertResult) {
             await ejs.renderFile(
@@ -96,6 +98,7 @@ router.post("/report/view", verify, async (req, res) => {
 
                     try {
                         const pdfResult = pdf.create(data).toFile(`generated_pdf/${generateUuid}.pdf`, (err, pdfResult)=>{
+                            console.log("pdf created successfully");
                             res.status(200).json({ message: generateUuid });             
                         });
 
